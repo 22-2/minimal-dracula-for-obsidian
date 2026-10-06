@@ -7,6 +7,35 @@
 @license          GNU General Public License v3.0
 == */
 
+/* @settings
+name: Minimal Dracula
+id: minimal-dracula
+settings:
+  -
+    id: drx-color-scheme-header
+    title: Color scheme
+    type: heading
+    level: 1
+    collapsed: false
+  -
+    id: drx-dark-color-scheme
+    title: Dark color scheme
+    description: Select an alternate dark palette while keeping the Minimal Dracula layout.
+    type: class-select
+    allowEmpty: true
+    default: none
+    options:
+      -
+        label: Dracula
+        value: none
+      -
+        label: Arc Blueberry
+        value: minimal-arc-blueberry-dark
+      -
+        label: Shades of Purple
+        value: minimal-shades-of-purple-dark
+*/
+
 /* ========================== OBSIDIAN VALUES ======================== */
 
 :root {
@@ -275,6 +304,7 @@ body.theme-dark {
 		font-weight: 500;
 		color: color-mix(in srgb, rgb(var(--callout-color)), white 35%) !important;
 	}
+
 
 	.callout[data-callout="todo"] {
 		background: var(--drx-color-red-2) !important;
@@ -892,4 +922,120 @@ img[alt*="center"] {
 	margin-bottom: 4px;
 	margin-top: 4px;
 	max-height: 400px;
+}
+
+/* Palette values are adapted from Minimal's Arc Blueberry and Shades of Purple
+   color schemes. The mappings below make them affect Minimal Dracula's colors. */
+body.theme-dark.minimal-arc-blueberry-dark {
+	--base-h: 228;
+	--base-s: 33%;
+	--base-l: 10%;
+	--accent-h: 220;
+	--accent-s: 60%;
+	--accent-l: 73%;
+	--drx-color-base: #111422;
+	--drx-color-surface: #0D101B;
+	--drx-color-overlay: #1A1E33;
+	--drx-color-highlight: #2B3255;
+	--drx-color-text: #EAF0FA;
+	--drx-color-subtext: #BCC1DC;
+	--drx-color-deactivate: #9AA2CB;
+	--drx-color-comment: #2B3255;
+	--color-red: #E35535;
+	--color-red-rgb: 227, 85, 53;
+	--color-orange: #FF955C;
+	--color-orange-rgb: 255, 149, 92;
+	--color-yellow: #EACD61;
+	--color-yellow-rgb: 234, 205, 97;
+	--color-green: #3CEC85;
+	--color-green-rgb: 60, 236, 133;
+	--color-cyan: #22ECDB;
+	--color-cyan-rgb: 34, 236, 219;
+	--color-blue: #69C3FF;
+	--color-blue-rgb: 105, 195, 255;
+	--color-purple: #F38CEC;
+	--color-purple-rgb: 243, 140, 236;
+	--color-pink: #B78AFF;
+	--color-pink-rgb: 183, 138, 255;
+	--drx-color-red-1: var(--color-red);
+	--drx-color-red-2: var(--color-red);
+	--drx-color-red-3: var(--color-red);
+	--drx-color-orange-1: var(--color-orange);
+	--drx-color-orange-2: var(--color-orange);
+	--drx-color-orange-3: var(--color-orange);
+	--drx-color-yellow-1: var(--color-yellow);
+	--drx-color-yellow-2: var(--color-yellow);
+	--drx-color-yellow-3: var(--color-yellow);
+	--drx-color-green-1: var(--color-green);
+	--drx-color-green-2: var(--color-green);
+	--drx-color-green-3: var(--color-green);
+	--drx-color-cyan-1: var(--color-cyan);
+	--drx-color-cyan-2: var(--color-cyan);
+	--drx-color-cyan-3: var(--color-cyan);
+	--drx-color-blue-1: var(--color-blue);
+	--drx-color-blue-2: var(--color-blue);
+	--drx-color-blue-3: var(--color-blue);
+	--drx-color-purple-1: var(--color-purple);
+	--drx-color-purple-2: var(--color-purple);
+	--drx-color-purple-3: var(--color-purple);
+	--drx-color-pink-1: var(--color-pink);
+	--drx-color-pink-2: var(--color-pink);
+	--drx-color-pink-3: var(--color-pink);
+}
+
+body.theme-dark.minimal-shades-of-purple-dark {
+	--base-h: 245;
+	--base-s: 33%;
+	--base-l: 25%;
+	--accent-h: 49;
+	--accent-s: 100%;
+	--accent-l: 50%;
+	--drx-color-base: #2D2B55;
+	--drx-color-surface: #222244;
+	--drx-color-overlay: color-mix(in srgb, #222244, #fff 12%);
+	--drx-color-highlight: #3E3C6D;
+	--drx-color-text: #FFFFFF;
+	--drx-color-subtext: #A599E9;
+	--drx-color-deactivate: #8175BF;
+	--drx-color-comment: #5A54A4;
+	--color-red: #EC3A37;
+	--color-red-rgb: 236, 58, 55;
+	--color-orange: #FF9100;
+	--color-orange-rgb: 255, 145, 0;
+	--color-yellow: #FAD000;
+	--color-yellow-rgb: 250, 208, 0;
+	--color-green: #3DD296;
+	--color-green-rgb: 61, 210, 150;
+	--color-cyan: #00E5FF;
+	--color-cyan-rgb: 0, 229, 255;
+	--color-blue: #3AA0FF;
+	--color-blue-rgb: 58, 160, 255;
+	--color-purple: #B362FF;
+	--color-purple-rgb: 179, 98, 255;
+	--color-pink: #FF628C;
+	--color-pink-rgb: 255, 98, 140;
+	--drx-color-red-1: var(--color-red);
+	--drx-color-red-2: var(--color-red);
+	--drx-color-red-3: var(--color-red);
+	--drx-color-orange-1: var(--color-orange);
+	--drx-color-orange-2: var(--color-orange);
+	--drx-color-orange-3: var(--color-orange);
+	--drx-color-yellow-1: var(--color-yellow);
+	--drx-color-yellow-2: var(--color-yellow);
+	--drx-color-yellow-3: var(--color-yellow);
+	--drx-color-green-1: var(--color-green);
+	--drx-color-green-2: var(--color-green);
+	--drx-color-green-3: var(--color-green);
+	--drx-color-cyan-1: var(--color-cyan);
+	--drx-color-cyan-2: var(--color-cyan);
+	--drx-color-cyan-3: var(--color-cyan);
+	--drx-color-blue-1: var(--color-blue);
+	--drx-color-blue-2: var(--color-blue);
+	--drx-color-blue-3: var(--color-blue);
+	--drx-color-purple-1: var(--color-purple);
+	--drx-color-purple-2: var(--color-purple);
+	--drx-color-purple-3: var(--color-purple);
+	--drx-color-pink-1: var(--color-pink);
+	--drx-color-pink-2: var(--color-pink);
+	--drx-color-pink-3: var(--color-pink);
 }
