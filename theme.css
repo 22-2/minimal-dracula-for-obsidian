@@ -658,16 +658,7 @@ h1[align="center"],
 	padding-bottom: 0.25em !important;
 }
 
-/* Custom styling for horizontal rules (---) */
-.markdown-rendered hr,
-.hr.cm-line hr,
-.cm-hr {
-	width: 30% !important;
-	margin: 3.5rem auto !important;
-	border: none !important;
-	border-top: var(--hr-thickness) solid var(--hr-color) !important;
-	opacity: 0.6;
-}
+/* Let Obsidian's built-in rule styles control spacing; custom .cm-hr margins made editor blocks too tall. */
 
 /* Styles the vault selection area at the bottom-left */
 .workspace-sidedock-vault-profile {
