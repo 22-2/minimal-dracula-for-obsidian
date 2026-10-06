@@ -22,12 +22,12 @@ settings:
     title: Dark color scheme
     description: Select an alternate dark palette while keeping the Minimal Dracula layout.
     type: class-select
-    allowEmpty: true
-    default: none
+    allowEmpty: false
+    default: minimal-dracula-default
     options:
       -
         label: Dracula
-        value: none
+        value: minimal-dracula-default
       -
         label: Arc Blueberry
         value: minimal-arc-blueberry-dark
@@ -35,6 +35,8 @@ settings:
         label: Shades of Purple
         value: minimal-shades-of-purple-dark
 */
+
+/* The inert default class keeps Dracula selectable without changing its base styles. */
 
 /* ========================== OBSIDIAN VALUES ======================== */
 
