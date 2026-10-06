@@ -170,7 +170,7 @@ body.theme-dark {
 	--color-base-35: var(--drx-color-overlay);
 	--color-base-40: var(--drx-color-overlay);
 	--color-base-50: var(--drx-color-deactivate);
-	--color-base-60: red;
+	/* --color-base-60: red; */
 	--color-base-70: var(--drx-color-subtext);
 	--color-base-100: var(--drx-color-text);
 
