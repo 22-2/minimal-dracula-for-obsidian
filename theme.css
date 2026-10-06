@@ -127,7 +127,8 @@ body.theme-dark {
 	--drx-color-deactivate: #707487;
 	--drx-color-comment: #6270A4;
 
-	--drx-color-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+	/* A small lightness reduction gives the accent more visual weight without changing its hue. */
+	--drx-color-accent: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 10%));
 	--drx-color-important: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 20%));
 
 	--drx-color-red-1: #FF6E6E;
@@ -269,10 +270,6 @@ body.theme-dark {
 		background-color: var(--drx-color-highlight);
 	}
 
-	.setting-group .setting-item-control select:hover {
-		background-color: var(--drx-color-accent);
-	}
-
 	/* Tab content styling */
 	.horizontal-tab-content,
 	.vertical-tab-content {
@@ -326,7 +323,8 @@ body.theme-light {
 	--drx-color-deactivate: #BCBAB3;
 	--drx-color-comment: #6C664B;
 
-	--drx-color-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+	/* A small lightness reduction gives the accent more visual weight without changing its hue. */
+	--drx-color-accent: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 10%));
 	--drx-color-important: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 20%));
 
 	--drx-color-red-1: #D74C3D;
@@ -807,34 +805,39 @@ body:not(.table-width-obsidian-default) :is(.markdown-rendered, .markdown-source
 	border: 1px solid color-mix(in srgb, var(--drx-color-orange-2) 30%, transparent) !important;
 }
 
-/* Dropdowns and comboboxes styling */
+/* Keep controls neutral at rest and share native accent colors on hover across palettes. */
 button:not(.clickable-icon),
 select,
 .combobox-button,
 .dropdown {
+	background-color: var(--drx-color-highlight) !important;
+	color: var(--drx-color-text) !important;
 	border-radius: var(--drx-border-radius-inner) !important;
 	border: 1px solid var(--drx-button-border) !important;
 	box-shadow: var(--drx-button-shadow) !important;
 	transition: all 0.2s ease !important;
 }
 
-button:not(.clickable-icon):hover {
-	background-color: var(--drx-color-accent) !important;
-	color: var(--drx-color-base) !important;
-	border-color: var(--drx-color-accent) !important;
+button:not(.clickable-icon):hover,
+select:hover,
+.combobox-button:hover,
+.dropdown:hover {
+	background-color: var(--interactive-accent) !important;
+	color: var(--text-on-accent) !important;
+	border-color: var(--interactive-accent) !important;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
 	cursor: pointer;
 }
 
 button.mod-cta {
-	background-color: var(--drx-color-accent) !important;
-	color: var(--drx-color-base) !important;
-	border-color: var(--drx-color-accent) !important;
+	background-color: var(--interactive-accent) !important;
+	color: var(--text-on-accent) !important;
+	border-color: var(--interactive-accent) !important;
 }
 
 button.mod-cta:hover {
-	background-color: var(--drx-color-important) !important;
-	border-color: var(--drx-color-important) !important;
+	background-color: var(--interactive-accent-hover) !important;
+	border-color: var(--interactive-accent-hover) !important;
 }
 
 /* Kanban plugin global fixes */
@@ -916,6 +919,11 @@ img[alt*="center"] {
 /* Palette values are adapted from Minimal's Arc Blueberry and Shades of Purple
    color schemes. The mappings below make them affect Minimal Dracula's colors. */
 body.theme-dark.minimal-arc-blueberry-dark {
+	/* Define the shared accent directly so native UI and controls use the same blue without circular references. */
+	--color-accent: #356ADB;
+	--interactive-accent: var(--color-accent);
+	--interactive-accent-hover: #2859BE;
+	--text-on-accent: #FFFFFF;
 	--base-h: 228;
 	--base-s: 33%;
 	--base-l: 10%;
