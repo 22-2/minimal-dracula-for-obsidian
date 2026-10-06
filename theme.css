@@ -279,10 +279,6 @@ body.theme-dark {
 		background-color: var(--drx-color-surface);
 	}
 
-	.workspace-tab-header-container .workspace-tab-header.is-active {
-		background-color: var(--drx-color-surface) !important;
-	}
-
 	/* Callouts styling */
 	.callout {
 		border-radius: var(--drx-border-radius-inner) !important;
@@ -588,7 +584,7 @@ body.theme-light {
 		--drx-inline-code-color: var(--drx-color-yellow-2);
 		a { color: var(--drx-color-yellow-2) !important; }
 	}
-	
+
 	/* Styles inline code blocks in markdown */
 	.cm-inline-code,
 	:not(pre)>code {
